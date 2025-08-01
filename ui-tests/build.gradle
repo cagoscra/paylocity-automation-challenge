@@ -1,0 +1,3 @@
+rootProject.name = 'paylocity-automation-challenge'
+
+include 'ui-tests'
