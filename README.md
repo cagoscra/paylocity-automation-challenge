@@ -61,3 +61,12 @@ Authorization: Basic VGVzdFVzZXI3NzM6NnEwXWwkQktPVWIh
 
 ## Author
 Oscar - Paylocity STE Assessment
+
+
+
+
+
+To run the test it's only necesary to install gradle and run with
+./gradlew test
+
+<img width="1241" height="598" alt="image" src="https://github.com/user-attachments/assets/5aac785f-1911-4777-9457-32c0a48f5df4" />
