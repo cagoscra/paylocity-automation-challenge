@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Class DashboardLoginTest</title>
+<title>Test results - EmployeeManagementTest</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>Class DashboardLoginTest</h1>
+<h1>EmployeeManagementTest</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/default-package.html">default-package</a> &gt; DashboardLoginTest</div>
+<a href="../packages/tests.html">tests</a> &gt; EmployeeManagementTest</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">5</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">19.806s</div>
+<div class="counter">1m17.33s</div>
 <p>duration</p>
 </div>
 </td>
@@ -73,23 +73,39 @@
 <thead>
 <tr>
 <th>Test</th>
+<th>Method name</th>
 <th>Duration</th>
 <th>Result</th>
 </tr>
 </thead>
 <tr>
-<td class="success">loginPageLoads()</td>
-<td class="success">7.554s</td>
+<td class="success">Scenario 1: Add Employee</td>
+<td class="success">addEmployeeScenario()</td>
+<td class="success">15.035s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">loginWithInvalidCredentials()</td>
-<td class="success">4.952s</td>
+<td class="success">Scenario 3: Delete Employee</td>
+<td class="success">deleteEmployeeScenario()</td>
+<td class="success">16.386s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">loginWithValidCredentials()</td>
-<td class="success">7.300s</td>
+<td class="success">Scenario 2: Edit Employee</td>
+<td class="success">editEmployeeScenario()</td>
+<td class="success">21.684s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Verify Benefits Calculation - Employee with no dependents</td>
+<td class="success">verifyBenefitsCalculationNoDependents()</td>
+<td class="success">12.137s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Verify Benefits Calculation - Employee with dependents</td>
+<td class="success">verifyBenefitsCalculationWithDependents()</td>
+<td class="success">12.091s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,17 +113,28 @@
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>jul 31, 2025 9:04:34 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+<pre>SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+jul 31, 2025 9:04:53 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-jul 31, 2025 9:04:35 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+jul 31, 2025 9:04:53 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 138.0.7204.184. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-jul 31, 2025 9:04:41 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+jul 31, 2025 9:05:13 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-jul 31, 2025 9:04:41 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+jul 31, 2025 9:05:13 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 138.0.7204.184. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-jul 31, 2025 9:04:47 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+jul 31, 2025 9:05:25 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-jul 31, 2025 9:04:47 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+jul 31, 2025 9:05:25 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.184. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+jul 31, 2025 9:05:40 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+jul 31, 2025 9:05:40 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.184. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+jul 31, 2025 9:05:56 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+jul 31, 2025 9:05:56 P.M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 138.0.7204.184. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 </pre>
 </span>

@@ -256,6 +256,192 @@
 			"response": []
 		},
 		{
+			"name": "Prod/Api/Employees Edge case 10 dependents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Employee was created successfully\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    pm.expect(newEmployee).to.have.property('id');",
+							"    pm.expect(newEmployee.id).to.not.be.empty;",
+							"});",
+							"",
+							"pm.test(\"Created employee has correct data\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    const requestBody = JSON.parse(pm.request.body.raw);",
+							"    ",
+							"    pm.expect(newEmployee.firstName).to.equal(requestBody.firstName);",
+							"    pm.expect(newEmployee.lastName).to.equal(requestBody.lastName);",
+							"    pm.expect(newEmployee.dependants).to.equal(requestBody.dependants);",
+							"});",
+							"",
+							"pm.test(\"Default values are set correctly\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    pm.expect(newEmployee.salary).to.equal(52000);",
+							"    pm.expect(newEmployee.gross).to.equal(2000);",
+							"    pm.expect(newEmployee.username).to.equal(\"TestUser773\");",
+							"});",
+							"",
+							"pm.test(\"Benefits are calculated correctly\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    const expectedCost = (1000 + (newEmployee.dependants * 500)) / 26;",
+							"    const expectedNet = 2000 - expectedCost;",
+							"    ",
+							"    pm.expect(newEmployee.benefitsCost).to.be.closeTo(expectedCost, 0.01);",
+							"    pm.expect(newEmployee.net).to.be.closeTo(expectedNet, 0.01);",
+							"});",
+							"",
+							"// Guardar ID para usar en otros tests",
+							"pm.test(\"Save employee ID for cleanup\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    pm.globals.set(\"createdEmployeeId\", newEmployee.id);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic VGVzdFVzZXI3NzM6NnEwXWwkQktPVWIh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Oscar\",\n    \"lastName\": \"Test\",\n    \"dependants\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Api/Employees",
+					"protocol": "https",
+					"host": [
+						"wmxrwq14uc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Prod",
+						"Api",
+						"Employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prod/Api/Employees Error 400",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Employee was created successfully\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    pm.expect(newEmployee).to.have.property('id');",
+							"    pm.expect(newEmployee.id).to.not.be.empty;",
+							"});",
+							"",
+							"pm.test(\"Created employee has correct data\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    const requestBody = JSON.parse(pm.request.body.raw);",
+							"    ",
+							"    pm.expect(newEmployee.firstName).to.equal(requestBody.firstName);",
+							"    pm.expect(newEmployee.lastName).to.equal(requestBody.lastName);",
+							"    pm.expect(newEmployee.dependants).to.equal(requestBody.dependants);",
+							"});",
+							"",
+							"pm.test(\"Default values are set correctly\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    pm.expect(newEmployee.salary).to.equal(52000);",
+							"    pm.expect(newEmployee.gross).to.equal(2000);",
+							"    pm.expect(newEmployee.username).to.equal(\"TestUser773\");",
+							"});",
+							"",
+							"pm.test(\"Benefits are calculated correctly\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    const expectedCost = (1000 + (newEmployee.dependants * 500)) / 26;",
+							"    const expectedNet = 2000 - expectedCost;",
+							"    ",
+							"    pm.expect(newEmployee.benefitsCost).to.be.closeTo(expectedCost, 0.01);",
+							"    pm.expect(newEmployee.net).to.be.closeTo(expectedNet, 0.01);",
+							"});",
+							"",
+							"// Guardar ID para usar en otros tests",
+							"pm.test(\"Save employee ID for cleanup\", function () {",
+							"    const newEmployee = pm.response.json();",
+							"    pm.globals.set(\"createdEmployeeId\", newEmployee.id);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic VGVzdFVzZXI3NzM6NnEwXWwkQktPVWIh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Oscar\",\n    \"lastName\": \"Test\",\n    \"dependants\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Api/Employees",
+					"protocol": "https",
+					"host": [
+						"wmxrwq14uc",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Prod",
+						"Api",
+						"Employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Prod/Api/Employees/d3264883-c4e5-41f4-9c46-37de9ce5a453",
 			"event": [
 				{

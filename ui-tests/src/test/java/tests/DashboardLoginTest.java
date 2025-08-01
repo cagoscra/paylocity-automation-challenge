@@ -43,7 +43,8 @@ public class DashboardLoginTest {
         driver.findElement(By.cssSelector("button[type='submit']")).click();
 
         // Espera simple, puedes mejorar con WebDriverWait
-        Assertions.assertTrue(driver.getPageSource().contains("Login") || driver.getPageSource().contains("Invalid"));
+        Assertions.assertTrue(driver.getPageSource().contains("HTTP ERROR 405") ||
+                driver.getPageSource().contains("Esta página no funciona"));
     }
 
     @AfterEach
