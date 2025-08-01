@@ -8,4 +8,11 @@ out/
 # Otros archivos innecesarios
 target/          # Para proyectos Maven
 build/           # Para proyectos Gradle
+.gradle/         # Directorio oculto de Gradle
 .DS_Store        # Archivos de macOS
+
+# Opcional: ignora logs y archivos temporales
+*.log
+
+# VSCode (si usas)
+.vscode/
